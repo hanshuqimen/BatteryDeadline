@@ -1,0 +1,27 @@
+name: Import verified source
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - name: Import the verified release draft archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          asset_id=$(gh api "repos/$GITHUB_REPOSITORY/releases" --jq '.[] | select(.tag_name == "v0.1.0") | .assets[] | select(.name == "BatteryDeadline_0.1.0_source.zip") | .id')
+          [[ "$asset_id" =~ ^[0-9]+$ ]]
+          gh api "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id" -H "Accept: application/octet-stream" > "$RUNNER_TEMP/source.zip"
+          echo "0dc9bcb176546a9239d744636ff67b81ecb24dce3a0c068c95121ca9e5401912  $RUNNER_TEMP/source.zip" | sha256sum -c -
+          unzip -o "$RUNNER_TEMP/source.zip" -d .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git commit -m "Implement BatteryDeadline with Chinese, English and Japanese support"
+          git push origin HEAD:main
