@@ -69,7 +69,7 @@ function AppView({ backend }: { backend: ReturnType<typeof useBackend> }) {
           <LockKeyhole size={14} aria-hidden="true" />
           <span>{t("Private. Local. Yours.")}</span>
           <small>
-            {t("Version")} {data?.version ?? "0.1.0"}
+            {t("Version")} {data?.version ?? "0.1.1"}
           </small>
         </div>
       </aside>
