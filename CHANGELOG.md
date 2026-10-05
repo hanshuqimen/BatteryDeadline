@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 — 2026-10-05
+
+- Enforce LF source checkout on Windows, fixing the clean-runner formatting check.
+- Preserve the supplied specification's original bytes.
+
 ## 0.1.0 — 2026-10-05
 
 Initial Windows 11 x64 preview: real battery telemetry, reserve-aware estimates, conservative deadline control, brightness/refresh/DC CPU adapters, verified persistent recovery, manual override protection, tray, four desktop pages, SQLite history, local diagnostics, CLI, simulation, automated safety tests, and NSIS/portable distribution.

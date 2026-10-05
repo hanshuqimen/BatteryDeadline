@@ -16,11 +16,11 @@
 - Includes Dashboard, History, Settings, About, a native tray, local diagnostics export, a CLI, and a deterministic hardware simulator using the production controller.
 - Ships **Simplified Chinese, English, and Japanese** offline. The UI and native tray follow Windows by default; Settings lets you save a language choice immediately, including during a session. Dates/numbers follow that language.
 
-**v0.1.0 is an initial preview release for Windows 11 x64.** It is a complete installable MVP, not a guarantee of reaching a deadline. Cross-device discharge, sleep, and performance validation remains necessary. Hardware restrictions are shown in the app. EcoQoS/process changes are deferred to v0.2; this release does not touch processes.
+**v0.1.1 is an initial preview release for Windows 11 x64.** It is a complete installable MVP, not a guarantee of reaching a deadline. Cross-device discharge, sleep, and performance validation remains necessary. Hardware restrictions are shown in the app. EcoQoS/process changes are deferred to v0.2; this release does not touch processes.
 
 ## Install and use
 
-Download `BatteryDeadline_0.1.0_x64-setup.exe` from [Releases](https://github.com/hanshuqimen/BatteryDeadline/releases). The installer is per-user. WebView2 is required; its Microsoft bootstrapper is downloaded when missing. A portable ZIP and SHA-256 checksums are provided as well. These initial binaries are **unsigned**.
+Download `BatteryDeadline_0.1.1_x64-setup.exe` from [Releases](https://github.com/hanshuqimen/BatteryDeadline/releases). The installer is per-user. WebView2 is required; its Microsoft bootstrapper is downloaded when missing. A portable ZIP and SHA-256 checksums are provided as well. These initial binaries are **unsigned**.
 
 1. Open BatteryDeadline on a battery-powered Windows laptop.
 2. Choose a full local date/time and a 5–30% reserve.
