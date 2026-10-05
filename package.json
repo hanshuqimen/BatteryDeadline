@@ -1,0 +1,45 @@
+{
+  "name": "battery-deadline",
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "private": true,
+  "type": "module",
+  "description": "Cruise control for laptop battery life",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "lint": "eslint src tests",
+    "format": "prettier --write src tests *.json *.ts *.js",
+    "format:check": "prettier --check src tests *.json *.ts *.js",
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.8.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tauri-apps/cli": "^2.8.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "prettier": "^3.7.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vite": "^7.2.0",
+    "vitest": "^4.0.0"
+  }
+}

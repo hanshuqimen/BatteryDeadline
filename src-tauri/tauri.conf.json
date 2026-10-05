@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "BatteryDeadline",
+  "version": "0.1.0",
+  "identifier": "io.github.hanshuqimen.batterydeadline",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [{ "label": "main", "title": "BatteryDeadline", "width": 1080, "height": 780, "minWidth": 620, "minHeight": 600 }],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src ipc: http://ipc.localhost; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/icon.ico"],
+    "shortDescription": "Cruise control for laptop battery life",
+    "longDescription": "A local, reversible battery deadline controller for Windows 11.",
+    "copyright": "Copyright 2026 BatteryDeadline contributors",
+    "category": "Utility",
+    "windows": { "nsis": { "installMode": "currentUser", "displayLanguageSelector": true, "languages": ["English", "SimpChinese", "Japanese"] }, "webviewInstallMode": {"type": "downloadBootstrapper", "silent": true} }
+  }
+}
